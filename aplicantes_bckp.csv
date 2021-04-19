@@ -1,0 +1,31 @@
+AplicanteID,Nome,Sobrenome,Email,Cidade,Estado,LadoAplicacao,TipoTrabalho,Tecnologias,MelhorTecnologia,Ingles,ExperienciaTrabalho,DescricaoExperiencia
+1,Joao,Sales,teste@demo.com.br,Garopaba,SC,backend,Físico Remoto,PowerBI Tableau R Python SQL Docker,Python,Avancado,Pleno,"Estou procurando uma vaga de business inteligence, aplicado ao setor de delivery de comida"
+2,Pedro,Rodrigues,teste@demo.com.br,Sao Bernardo do Campo,SP,backend,Físico Remoto,DeepLearning Python Sckitlearn C C# JavaScript ,DeepLearning,Avancado,Senior,"Gostaria de uma vaga no time de Cientista de Dados com foco em Machine Learning, Visao Computacional e time series"
+3,Lucas,Pereira,teste@demo.com.br,Sao Paulo,SP,frontend,Remoto,ReactNative Bootstrap Java JavaScript jQuery,React,Basico,Pleno,"Gostaria de uma vaga no campo de programacao front-end, utilizando tecnologias atuais como ReactNative"
+4,Marcelo,Brum,teste@demo.com.br,Canoas,RS,backend,Fisico,PowerBI R Python SQL Excel GoogleSheets,R,Avancado,Junior,Procuro vaga de junior de cientista de dados aplicado a area de financas
+5,Roger,Machado,teste@demo.com.br,Curitiba,PR,frontend,Fisico Remoto,Python Scitkitlearn Prophet,Prophet,Basico,Senior,"Gostaria de uma vaga no time de Cientista de Dados com foco em time series, previsoes"
+6,Antônia,Garibaldi,teste@demo.com.br,Cabo Frio,RJ,frontend,Fisico,React jQuery,jQuery,Intermediario,Junior,Procuro uma vaga de programador front-end
+7,Bruno,Cueto,teste@demo.com.br,Buzios,RJ,frontend,Fisico Remoto,Flutter ReactNative Swift,Flutter,Avancado,Pleno,Gostaria de uma vaga no campo de programacao front-end em empresas voltada a aplicativos android e mac
+8,Isabela,Sudati,teste@demo.com.br,Rio de Janeiro,RJ,backend,Remoto,Spark Tableau R Python SQL,SQL,Intermediario,Pleno,Quero uma vaga no time de analise de dados com foco em big data
+9,Alex,Sampaio,teste@demo.com.br,Sao Bernardo do Campo,SP,backend,Fisico,Python SQL Docker,Python,Avancado,Pleno,Vaga de cientista de dados pleno com foco no setor de varejo
+10,Fernando,Dorneles,teste@demo.com.br,Sao Bernardo do Campo,SP,frontend,Remoto,Flutter ReactNative,Flutter,Avancado,Pleno,Gostaria de uma vaga no campo de programacao front-end em empresas de aplicativos
+11,Thalison,Faccin,teste@demo.com.br,Aracaju,SE,backend,Fisico,Python,Python,Avancado,Junior,Estou procurando uma vaga de business inteligence
+12,Pedro,Campos,teste@demo.com.br,Aracaju,SE,backend,Fisico,PHP Ruby C# Java JavaScript Python,PHP,Avancado,Pleno,Procuro uma vaga de programador back-end
+13,Gabriela,Rumi,teste@demo.com.br,Sao Paulo,SP,frontend,Fisico,HTML CCS JavaScript Bootstrap,HTML,Basico,Senior,Procuro uma vaga de programador front-end
+14,José,Brum,teste@demo.com.br,Florianopolis,SC,backend,Fisico,PHP Ruby C# Java Perl,Ruby,Avancado,Senior,Procuro uma vaga de programador back-end
+15,Rodrigo,Pereira,teste@demo.com.br,Florianopolis,SC,gestao,Remoto,React HTML CCS ReactNative Swift Kanban Scrum,Scrum,Intermediario,Senior,Procuro uma vaga no gerenciamento de times front-end
+16,Igor,Santos,teste@demo.com.br,Porto Alegre,RS,backend,Fisico,C C# Python ,C,Avancado,Junior,Estou procurando uma de programador de sistemas embarcados
+17,Filipe,Oliveira,teste@demo.com.br,Sao Paulo,SP,backend,Fisico,Deep Learning Python Scikitlearn C JavaScript SQL,DeepLearning,Avancado,Senior,Vaga de cientista de dados para recomendacao de sistemas
+18,Felipe,Souza,teste@demo.com.br,Sao Bernardo do Campo,SP,backend,Fisico Remoto,AWS GoogleCloud Docker JavaScript Python,Docker,Intermediario,Junior,Procuro uma vaga com deploy de sistemas em nuvem
+19,Rafael,Ferreira,teste@demo.com.br,Porto Alegre,RS,backend,Fisico Remoto,AWS GoogleCloud Docker JavaScript Python,AWS,Intermediario,Pleno,"Procuro uma vaga de gerenciador de microservicos, cloud"
+20,Rafael,Lima,teste@demo.com.br,Rio de Janeiro,RJ,backend,Remoto,PHP Ruby C# Java JavaScript Python,Ruby,Intermediario,Pleno,Procuro uma vaga de programador back-end
+21,Fernando,dos Santos,teste@demo.com.br,Caxias do Sul,RS,frontend,Fisico,HTML CCS JavaScript Bootstrap ReacNative Swift,Swift,Intermediario,Pleno,Procuro uma vaga de programador front-end
+22,Angelica,Oliveira,teste@demo.com.br,Santa Maria,RS,backend,Fisico,Python PowerBI  SQL,Python,Intermediario,Pleno,"Estou procurando uma vaga de business inteligence, aplicado ao setor de delivery de comida e varejo"
+23,Christian,Barth,teste@demo.com.br,Rio de Janeiro,RJ,gestao,Fisico,HTML CCS ,CCS,Avancado,Pleno,Procuro uma vaga no gerenciamento de times front-end
+24,Bruna,Brum,teste@demo.com.br,Florianopolis,SC,backend,Remoto,C C# JavaScript AWS,C,Avancado,Senior,Estou procurando uma de programador de sistemas embarcados
+25,Pedro,Almeida,teste@demo.com.br,Rio de Janeiro,RJ,backend,Remoto,PowerBI Tableau R,PowerBI,Intermediario,Pleno,Estou procurando uma vaga de business inteligence 
+26,Victor,Carvalho,teste@demo.com.br,Canoas,RS,backend,Remoto,DeepLearning Scikitlearn Python,DeepLearning,Intermediario,Senior,"Gostaria de uma vaga no time de engeheiro de machine learning, visao computacional"
+27,Pedro,Araújo,teste@demo.com.br,Novo Hamburgo,RS,fullstack,Remoto,HTML CCS JavaScript Python C AWS React ReactNative SQL jQuery Flutter ,JavaScript,Intermediario,Senior,Gostaria de uma vaga no campo de programacao full-stack
+28,Alexsandro,Ribeiro,teste@demo.com.br,Rio de Janeiro,RJ,fullstack,Fisico,HTML  Python C  SQL jQuery Flutter ,Python,Intermediario,Senior,Gostaria de uma vaga no campo de programacao full-stack
+29,Gabriel,Araújo,teste@demo.com.br,Santiago,RS,fullstack,Fisico Remoto,Docker AWS GoogleCloud Python C JavaScript,Docker,Intermediario,Senior,"Estou procurando vaga como software engineer, desde a extracao de dados ate o deploy em cloud"
+30,André,Duarte,teste@demo.com.br,Osasco,SP,frontend,Remoto,React ReactJS AWS SQL,ReactJS,Avancado,Senior,Procuro uma vaga de programador front-end para desenvolvimento em React

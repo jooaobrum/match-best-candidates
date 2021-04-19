@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/formulario_empresa.css">
+    <title>Cadastro de Vaga - Triagem Inteligente para Recrutadores</title>
+</head>
+<body>
+
+    <div>
+        <h1 style="text-align:left" id="titulo">Cadastro de Vaga</h1>
+        <p id="subtitulo">Complete as informações da vaga da sua empresa:</p>
+        <br>
+    
+    </div>
+
+    <form action="/vagas" method="post">
+        <fieldset class ="grupo">
+            <div class="campo">
+                <label for="nome"><strong>Nome da empresa</strong>:</label>
+                <input type="text" name="nome" id="nome" required>
+            </div>
+
+        </fieldset>
+
+        <div class="campo">
+            <label for="setor"><strong>Setor da empresa</strong></label>
+            <input type="text" name="setor" id="setor">
+        </div>
+            
+
+        <fieldset class="grupo">
+            <div class="campo">
+                <label for="cidade"><strong>Cidade</strong></label>
+                <input type="text" name="cidade" id="cidade">
+            </div>
+            <div class="campo">
+                <label for="estado"><strong>Estado (sigla)</strong></label>
+                <input type="text" name="estado" id="estado">
+            </div>
+        </fieldset>
+
+        
+
+        <div class="campo">
+            <label><strong>Nome da vaga</strong></label>
+            <input type="text" name="nome_vaga" id="nome_vaga">
+        </div>
+
+
+        <div class="campo">
+            <label><strong>Está buscando um talento de qual lado da aplicação?</strong></label>
+            <label>
+                <input type="radio" name="devweb" value="frontend" checked>Front-end
+            </label>
+            <label>
+                <input type="radio" name="devweb" value="backend">Back-end
+            </label>
+            <label>
+                <input type="radio" name="devweb" value="fullstack">Fullstack
+            </label>
+            <label>
+                <input type="radio" name="devweb" value="gestao">Gestão de equipes
+            </label>
+        </div>
+
+
+        <div class="campo">
+            <label><strong>A vaga é:</strong></label>
+            <label>
+                <input type="radio" name="vaga_empresa" value="fisico" checked>Físico
+            </label>
+            <label>
+                <input type="radio" name="vaga_empresa" value="remoto">Remoto
+            </label>
+            <label>
+                <input type="radio" name="vaga_empresa" value="fisico remoto">Indiferente
+            </label>
+        </div>
+        
+        <div>
+            <ul class="checkbox-grid" >
+                <label><strong>Quais tecnologias são necessárias para essa vaga?</strong></label>
+                <br>
+                <li><input type="checkbox" NAME="linguagens" VALUE="PowerBI"> 
+                <label for="opcao_1">Power BI</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="Tableau"> 
+                <label for="opcao_2">Tableau</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="R"> 
+                <label for="opcao_3">R</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="Python"> 
+                <label for="opcao_4">Python</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="SQL"> 
+                <label for="opcao_5">SQL</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="Docker"> 
+                <label for="opcao_6">Docker</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="DeepLearning"> 
+                <label for="opcao_7">Deep Learning</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="scikitlearn"> 
+                <label for="opcao_8">Sckit-learn</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="C"> 
+                <label for="opcao_9">C</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="Csharp"> 
+                <label for="opcao_10">C#</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="JavaScript"> 
+                <label for="opcao_11">Java Script</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="ReactNative"> 
+                <label for="opcao_12">React Native</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="Bootstrap"> 
+                <label for="opcao_13">Bootstrap</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="Java"> 
+                <label for="opcao_14">Java</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="jQuery"> 
+                <label for="opcao_15">jQuery</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="Excel"> 
+                <label for="opcao_16">Excel</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="GoogleSheets"> 
+                <label for="opcao_17">Google Sheets</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="Prophet"> 
+                <label for="opcao_18">Prophet</label></li>
+                <li> <input type="checkbox" NAME="linguagens" VALUE="React"> 
+                <label for="opcao_19">React</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="Flutter"> 
+                <label for="opcao_20">Flutter</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="Swift"> 
+                <label for="opcao_21">Swift</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="ReactJS"> 
+                <label for="opcao_22">ReactJS</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="PHP"> 
+                <label for="opcao_23">PHP</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="Ruby"> 
+                <label for="opcao_24">Ruby</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="HTML"> 
+                <label for="opcao_25">HTML</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="CSS"> 
+                <label for="opcao_26">CSS</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="Pearl"> 
+                <label for="opcao_27">Perl</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="Kanban"> 
+                <label for="opcao_28">Kanban</label></li>
+                <li> <input type="checkbox" NAME="linguagens" VALUE="Scrum"> 
+                <label for="opcao_29">Scrum</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="AWS"> 
+                <label for="opcao_30">AWS</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="GoogleCloud"> 
+                <label for="opcao_31">Google Cloud</label></li>
+                <li><input type="checkbox" NAME="linguagens" VALUE="Spark"> 
+                <label for="opcao_32">Spark</label></li>
+            
+            </ul>
+        </div>
+        
+        <br />&nbsp;
+
+
+        <div class="campo">
+            <label><strong>Escolha o nível de inglês</strong></label>
+            <label>
+                <input type="radio" name="niv_ingles" value="basico" checked>Básico
+            </label>
+            <label>
+                <input type="radio" name="niv_ingles" value="intermediario">Intermediário
+            </label>
+            <label>
+                <input type="radio" name="niv_ingles" value="avancado">Avançado
+            </label>
+        </div>
+
+        <div class="campo">
+            <label><strong>O nível de inglês é obrigatório?</strong></label>
+            <label>
+                <input type="radio" name="ingles_obg" value="sim" checked>Sim
+            </label>
+            <label>
+                <input type="radio" name="ingles_obg" value="nao">Nao
+            </label>
+        </div>
+
+        <div>
+            <label for="experiencia"><strong>O nível de senioridade para a vaga é (até 2 opções): </strong></label><br>
+                <input type="checkbox" NAME="senioridade" VALUE="junior"> Júnior
+                <input type="checkbox" NAME="senioridade" VALUE="pleno"> Pleno
+                <input type="checkbox" NAME="senioridade" VALUE="senior"> Senior
+                
+        <br><br>
+        </div>
+            
+            <label for="experiencia"><strong>Faça uma descrição geral da vaga: </strong></label>
+            <br>
+            <textarea rows="6" style="width: 26em" id="experiencia" name="experiencia"></textarea>
+
+        </div>
+        <br>
+        <button type="submit">Submeter</button>
+        <br>
+        <br>
+        <nav>
+            <button onclick="goBack()">Voltar</button>
+        
+                <script>
+                function goBack() {
+                window.history.back();
+                }
+                </script>
+        </nav>
+    </form>
+    
+
+
+
+
+
+
+</body>
+</html>
+
+

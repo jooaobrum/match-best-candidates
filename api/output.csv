@@ -1,0 +1,6 @@
+AplicanteID,Nome,Sobrenome,Email,Cidade,Estado,LadoAplicacao,TipoTrabalho,Tecnologias,MelhorTecnologia,Ingles,ExperienciaTrabalho,DescricaoExperiencia,"LadoAplicacao,"
+22,Angelica,Oliveira,teste@demo.com.br,Santa Maria,RS,backend,Fisico,Python PowerBI  SQL,Python,Intermediario,Pleno,"Estou procurando uma vaga de business inteligence, aplicado ao setor de delivery de comida e varejo",
+1,Joao,Sales,teste@demo.com.br,Garopaba,SC,backend,Físico,PowerBI Tableau R Python SQL Docker,Python,Avancado,Pleno,"Estou procurando uma vaga de business inteligence, aplicado ao setor de delivery de comida",
+6,Antonio,Garibaldi,teste@demo.com.br,Cabo Frio,RJ,frontend,Fisico,React jQuery,jQuery,Intermediario,Junior,Procuro uma vaga de programador front-end,
+27,Pedro,Araujo,teste@demo.com.br,Novo Hamburgo,RS,fullstack,Remoto,HTML CCS JavaScript Python C AWS React ReactNative SQL jQuery Flutter ,JavaScript,Intermediario,Senior,Gostaria de uma vaga no campo de programacao full-stack,
+19,Rafael,Ferreira,teste@demo.com.br,Porto Alegre,RS,backend,Fisico Remoto,AWS GoogleCloud Docker JavaScript Python,AWS,Intermediario,Pleno,"Procuro uma vaga de gerenciador de microservicos, cloud",

@@ -1,0 +1,6 @@
+AplicanteID,Nome,Sobrenome,Email,Cidade,Estado,LadoAplicacao,TipoTrabalho,Tecnologias,MelhorTecnologia,Ingles,ExperienciaTrabalho,DescricaoExperiencia,"LadoAplicacao,"
+26,Victor,Carvalho,teste@demo.com.br,Canoas,RS,backend,Remoto,DeepLearning Scikitlearn Python,DeepLearning,Intermediario,Senior,"Gostaria de uma vaga no time de engeheiro de machine learning, visao computacional",
+22,Angelica,Oliveira,teste@demo.com.br,Santa Maria,RS,backend,Fisico,Python PowerBI  SQL,Python,Intermediario,Pleno,"Estou procurando uma vaga de business inteligence, aplicado ao setor de delivery de comida e varejo",
+2,Pedro,Rodrigues,teste@demo.com.br,Sao Bernardo do Campo,SP,backend,Físico,DeepLearning Python Sckitlearn C C# JavaScript ,DeepLearning,Avancado,Senior,"Gostaria de uma vaga no time de Cientista de Dados com foco em Machine Learning, Visao Computacional e time series",
+1,Joao,Sales,teste@demo.com.br,Garopaba,SC,backend,Físico,PowerBI Tableau R Python SQL Docker,Python,Avancado,Pleno,"Estou procurando uma vaga de business inteligence, aplicado ao setor de delivery de comida",
+5,Roger,Machado,teste@demo.com.br,Curitiba,PR,frontend,Fisico Remoto,Python Scitkitlearn Prophet,Prophet,Basico,Senior,"Gostaria de uma vaga no time de Cientista de Dados com foco em time series, previsoes",
