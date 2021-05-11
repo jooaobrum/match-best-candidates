@@ -1,11 +1,10 @@
 import numpy as np
 import os
-from flask import Flask, request, render_template, make_response
+from flask import Flask, request, render_template, make_response, url_for
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 import nltk
 from sklearn.feature_extraction.text import TfidfVectorizer
-from bs4 import BeautifulSoup
 import unidecode
 import random
 import time
@@ -122,6 +121,12 @@ def display_resultados():
 @app.route('/aleatorio')
 def display_aleatoria():
     
+    with open('templates/aleatorio.html', 'w') as f:
+        f.write(" ")
+    f.close()
+    
+    
+    
     random_id = random.randint(1, 4)
     print('RANDOM INT', random_id)
     # Lê e recomenda
@@ -167,22 +172,30 @@ def display_aleatoria():
                 </body>
                 </html>.
                 '''
-    with open('templates/aleatorio.html', 'w') as f:
-        f.write("")
-    f.close()
+ 
     
     
     print(df_vagas.tail(1))
+    
+    print('\n')
+    
+    print(output_df)
+    
+    time.sleep(0.5)
+    
+    
     # OUTPUT AN HTML FILE
-    with open('templates/aleatorio.html', 'w') as f:
+    with open('templates/aleatorio_{}.html'.format(random_id), 'w') as f:
         f.write(html_string.format(table_1=df_vagas.tail(1).to_html(index=False), table_2=output_df.to_html(index=False)))
     f.close()
+    
+   
 
     print("\n")
     
+    time.sleep(5)
     
-    
-    return render_template('aleatorio.html')
+    return render_template('aleatorio_{}.html'.format(random_id))
 
 @app.route('/talentos', methods=['POST'])
 def submeter_talento():
@@ -236,16 +249,20 @@ def submeter_vaga():
     nova_vaga('empresas.csv', vaga)  
     print('Nova vaga adicionada!')
     
+    
+    df_vaga_atual = pd.DataFrame(vaga, columns = ['NomeEmpresa','Setor','Cidade','Estado','NomeVaga','LadoAplicacao','TipoTrabalho','TecnologiasNecessarias','Ingles','InglesObrigatorio','Experiencia','DescricaoVaga'] )
+    
     # Lê e recomenda
     df_aplicantes = pd.read_csv('aplicantes.csv', encoding='ISO-8859-1')
-    df_vagas = pd.read_csv('empresas.csv', encoding='ISO-8859-1')
 
  
-    top_candidatos = recomendador(df_aplicantes, df_vagas)
+    top_candidatos = recomendador(df_aplicantes, df_vaga_atual)
     print(top_candidatos)
     
     output_df = df_aplicantes.set_index('AplicanteID').loc[top_candidatos]
 
+    
+    
     with open('templates/resultado.html', 'w') as f:
         f.write("")
     f.close()
@@ -281,23 +298,26 @@ def submeter_vaga():
                 </body>
                 </html>.
                 '''
-    print(df_vagas.tail(1))
+                
+    time.sleep(4)
+    
+    print(output_df)
+    
+    random_id = random.randint(1, 4)
     # OUTPUT AN HTML FILE
-    with open('templates/resultado.html', 'w') as f:
-        f.write(html_string.format(table_1=df_vagas.tail(1).to_html(index=False), table_2=output_df.to_html(index=False)))
+    with open('templates/resultado_{}.html'.format(random_id), 'w') as f:
+        f.write(html_string.format(table_1=df_vaga_atual.tail(1).to_html(index=False), table_2=output_df.to_html(index=False)))
     f.close()
     print("\n")
 
 
-    return render_template('resultado.html')
+
+    return render_template('resultado_{}.html'.format(random_id))
 
 
-@app.route('/random', methods=['POST'])
-def previsao_aleatoria():
-    print('teste')
 
 
 
 if __name__ == "__main__":
-        port = int(os.environ.get('PORT', 8080))
-        app.run(host='localhost', port=port)
+        port = int(os.environ.get('PORT', 80))
+        app.run(host='0.0.0.0', port=port)
