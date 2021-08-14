@@ -10,7 +10,7 @@ import random
 import time
 app = Flask(__name__, static_url_path='/static')
 
-
+# Function that append a new applicant to the database
 def novo_talento(csv, infos):
     df_talentos = pd.read_csv(csv, encoding='ISO-8859-1')
     aplicante_id = df_talentos['AplicanteID'].max()+1
@@ -23,7 +23,7 @@ def novo_talento(csv, infos):
     new_df.to_csv('aplicantes.csv', encoding='ISO-8859-1', index = False)
     return new_df
 
-
+# Function that append a new job to the database
 def nova_vaga(csv, infos):
     df_vagas = pd.read_csv(csv, encoding='ISO-8859-1')
     vaga_id = df_vagas['VagaID'].max()+1
@@ -34,6 +34,7 @@ def nova_vaga(csv, infos):
     new_df.to_csv('empresas.csv', encoding='ISO-8859-1', index = False)
     return new_df
 
+# Funtion to clean data, remove accents and special characters
 def limpa_dados(txt):
     # Remove acentos
     #print(txt)
@@ -50,7 +51,7 @@ def limpa_dados(txt):
     return txt
 
 
-
+# Function that recommends the best k_best applicants for a job
 def recomendador(aplicantes, vagas, k_melhores = 5):
     aplicantes_df = aplicantes.copy()
     aplicantes_df['all_concat'] = aplicantes_df['all_concat'] = aplicantes_df['Cidade'] + " " + aplicantes_df['Estado'] + " " +  aplicantes_df['LadoAplicacao']+ " " + aplicantes_df['TipoTrabalho'] + " " +  aplicantes_df['Tecnologias'] + " "  + aplicantes_df['MelhorTecnologia'] + " " + aplicantes_df['Ingles']+ " " + aplicantes_df['ExperienciaTrabalho'] + " "  + aplicantes_df['DescricaoExperiencia'] 
@@ -62,10 +63,14 @@ def recomendador(aplicantes, vagas, k_melhores = 5):
 
     stemmer = nltk.stem.RSLPStemmer()
     stop = nltk.corpus.stopwords.words('portuguese')
+
+    # Remove stopwords in portuguese
     texto_aplicantes = aplicantes_df['all_concat'].apply(lambda x: ' '.join([word for word in x.split() if word not in (stop)]))
-    # Separa em palavras
+    
+    # Word tokenize
     texto_aplicantes = texto_aplicantes.apply(lambda x : x.split(" "))
-    # Aplica o stemmer em cada palavra
+    
+    # Apply the stemmer
     texto_aplicantes = texto_aplicantes.apply(lambda x : [stemmer.stem(y) for y in x])
     texto_aplicantes = texto_aplicantes.apply(lambda x : " ".join(x))
     
@@ -73,60 +78,68 @@ def recomendador(aplicantes, vagas, k_melhores = 5):
     final_aplicantes['text'] = texto_aplicantes
     final_aplicantes['AplicanteID'] = aplicantes_df['AplicanteID']
     
-    # Aplica o TFIDF
+    # Apply TFIDF
     tfidf_vectorizer = TfidfVectorizer()
 
     tfidf_app = tfidf_vectorizer.fit_transform((final_aplicantes['text'])) #fitting and transforming the vector
     
-    # ----------- Fim da parte dos aplicantes -------------
+    # ----------- End of applicants section -------------
     
     vagas_df = vagas.copy()
-    # Pega apenas para a última vaga cadastrada
+    # Pick up the last job registered
     vagas_df = vagas_df.tail(1)
     
+
+    # Processing data
     vagas_df['all_concat'] = vagas_df['Cidade'] + " " + vagas_df['Estado'] + " " + vagas_df['Setor'] + " " + vagas_df['NomeVaga'] + " "  +  vagas_df['LadoAplicacao'] +  vagas_df['TipoTrabalho'] + " " + vagas_df['TecnologiasNecessarias'] + " " + vagas_df['Ingles'] + " " + vagas_df['Experiencia'] + " " + vagas_df['TipoTrabalho']
     vagas_df['all_concat'] = vagas_df['all_concat'].apply(lambda x: limpa_dados(x))
     
-    vaga_tfidf = tfidf_vectorizer.transform(vagas_df['all_concat']) #fitting and transforming the vector
+    #fitting and transforming the vector
+    vaga_tfidf = tfidf_vectorizer.transform(vagas_df['all_concat']) 
     
     output = list(map(lambda x: cosine_similarity(vaga_tfidf, x),tfidf_app))
     distances = []
     for i in range(0,len(final_aplicantes)):
         distances.append(output[i][0][0])
-        
+    
+    # Return the best applicants for the job    
     final_aplicantes['distances'] = distances
     top = final_aplicantes.sort_values('distances', ascending = False)['AplicanteID'][:k_melhores].values
     
     return top
     
-   
+# Flask api   
     
-    
+# Index html page    
 @app.route('/')
 def display_gui():
     return render_template('index.html')
 
+# Formulary of applicants html page
 @app.route('/formulario_talentos')
 def display_form_talentos():
     return render_template('formulario_talento.html')
 
+# Formulary jobs html page
 @app.route('/formulario_empresas')
 def display_form_empresas():
     return render_template('formulario_empresa.html')
 
+# Page for showing the results
 @app.route('/resultados')
 def display_resultados():
     return render_template('resultado.html')
 
+# Random recommendation
 @app.route('/aleatorio')
 def display_aleatoria():
-    
+    # Just to clean the html page every requistion	
     with open('templates/aleatorio.html', 'w') as f:
         f.write(" ")
     f.close()
     
     
-    
+    # Pick up a random ID (between 1 and 4)
     random_id = random.randint(1, 4)
     print('RANDOM INT', random_id)
     # Lê e recomenda
@@ -134,6 +147,7 @@ def display_aleatoria():
     df_vagas = pd.read_csv('empresas.csv', encoding='ISO-8859-1')
     df_vagas = df_vagas[df_vagas['VagaID'] == random_id]
  
+ 	# Return the best matches
     top_candidatos = recomendador(df_aplicantes, df_vagas)
     
     
@@ -141,7 +155,7 @@ def display_aleatoria():
 
   
 
-    
+    # Page with table
     html_string = '''
                 <!DOCTYPE html>
                 <html lang="pt-br">
@@ -197,6 +211,7 @@ def display_aleatoria():
     
     return render_template('aleatorio_{}.html'.format(random_id))
 
+# Submit a new applicant
 @app.route('/talentos', methods=['POST'])
 def submeter_talento():
     nome = request.form['nome']
@@ -225,7 +240,7 @@ def submeter_talento():
     return render_template('formulario_talento.html')
 
 
-
+# Submit a new job
 @app.route('/vagas', methods=['POST'])
 def submeter_vaga():
     nome_empresa = request.form['nome']
